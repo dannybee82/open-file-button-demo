@@ -1,0 +1,38 @@
+.image-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.preview-image {
+    max-width: 250px;
+    height: auto;
+}
+
+.pdf-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.error {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    background-color: darkred;
+    color: white;
+    padding: 8px;
+    border-radius: 5px;
+}
+
+.success {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    background-color: green;
+    color: white;
+    padding: 8px;
+    border-radius: 5px;
+}

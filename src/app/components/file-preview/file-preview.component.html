@@ -1,0 +1,63 @@
+<div class="container p-1">    
+    <div class="row mb-1">
+        <app-open-file 
+            [buttonText]="'Open image file'"
+            [fileExtensions]="'.jpg,.png,.jpeg,.gif'"
+            [matIcon]="'image'"
+            (selectedFile)="loadImage($event)">
+        </app-open-file>
+    </div>
+    <div class="row mb-1 image-container">
+        @if(this.imagePreview() !== '') {
+            <div>
+                <img class="preview-image" [src]="this.imagePreview()" alt="Preview" title="Preview">
+            </div>
+            <div class="horizontal-divider"></div>
+            <div>
+                <button type="button" mat-stroked-button color="warn" matTooltip="Remove image" (click)="removeImage()">
+                    <mat-icon>delete</mat-icon>
+                    <span>Remove image</span>
+                </button>
+            </div>
+        }      
+        
+        @if(this.errorLoadingImage() !== '') {
+            <div class="error">
+                <mat-icon>error</mat-icon>
+                <div class="ms-2">{{ this.errorLoadingImage() }}</div>                
+            </div>
+        }
+    </div>
+    <div class="divider mb-1 w-10"></div>
+    <div class="row mb-1">
+        <app-open-file 
+            [buttonText]="'Open PDF file'"
+            [fileExtensions]="'.pdf'"
+            [matIcon]="'picture_as_pdf'"
+            (selectedFile)="loadPdf($event)">
+        </app-open-file>
+    </div>
+
+    <div class="row mb-1 pdf-container">
+        @if(this.isPdfValid()) {
+            <div class="success">
+                <mat-icon>check</mat-icon>
+                <div class="ms-2">PDF valid</div>
+            </div>
+            <div class="horizontal-divider"></div>
+            <div>
+                <button type="button" mat-stroked-button color="warn" matTooltip="Remove PDF" (click)="removePdf()">
+                    <mat-icon>delete</mat-icon>
+                    <span>Remove PDF</span>
+                </button>
+            </div>
+        }             
+            
+        @if(this.errorLoadingPdf() !== '') {
+            <div class="error">
+                <mat-icon>error</mat-icon>
+                <div class="ms-2">{{ this.errorLoadingPdf() }}</div>
+            </div>
+        }        
+    </div>
+</div>

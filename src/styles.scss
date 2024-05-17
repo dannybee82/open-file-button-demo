@@ -1,1 +1,38 @@
 /* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.container {
+    width: 100%;
+}
+
+.row {
+    width: 100%;
+}
+
+.p-1 {
+    padding: 16px;
+}
+
+.mb-1 {
+    margin-bottom: 16px;
+}
+
+.divider {
+    width: 100%;
+    border-bottom: 2px solid darkgrey;
+}
+
+.horizontal-divider {
+    width: 5%;
+    height: auto;
+}
+
+.w-10 {
+    width: 10%;
+}
+
+.ms-2 {
+    margin-left: 2px;
+}
