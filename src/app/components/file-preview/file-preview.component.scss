@@ -1,7 +1,18 @@
-.image-container {
+%flex-row-center {
     display: flex;
     flex-direction: row;
     align-items: center;
+}
+
+%flex-row-center-space-around {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.image-container {
+    @extend %flex-row-center;
 }
 
 .preview-image {
@@ -10,16 +21,11 @@
 }
 
 .pdf-container {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
+    @extend %flex-row-center;
 }
 
 .error {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
+    @extend %flex-row-center-space-around;
     background-color: darkred;
     color: white;
     padding: 8px;
@@ -27,10 +33,7 @@
 }
 
 .success {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
+    @extend %flex-row-center-space-around;
     background-color: green;
     color: white;
     padding: 8px;
