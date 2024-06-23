@@ -1,4 +1,4 @@
-import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { Component, InputSignal, input, OutputEmitterRef, output } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatTooltipModule } from '@angular/material/tooltip';
@@ -16,20 +16,20 @@ import { MatTooltipModule } from '@angular/material/tooltip';
 })
 export class OpenFileComponent {
 
-  @Input() buttonText?: string;
-  @Input() fileExtensions?: string;
-  @Input() allowMultipleSelection: boolean = false;
-  @Input() isDisabled?: boolean = false;
-  @Input() matIcon?: string = 'insert_drive_file';
+  buttonText: InputSignal<string> = input<string>('');
+  fileExtensions: InputSignal<string> = input<string>('*');
+  allowMultipleSelection: InputSignal<boolean> = input<boolean>(false);
+  isDisabled: InputSignal<boolean> = input<boolean>(false);
+  matIcon: InputSignal<string> = input<string>('');
 
-  @Output() selectedFile: EventEmitter<File> = new EventEmitter<File>();
-  @Output() selectedFiles: EventEmitter<File[]> = new EventEmitter<File[]>();
+  selectedFile: OutputEmitterRef<File> = output<File>()
+  selectedFiles: OutputEmitterRef<File[]> = output<File[]>()
 
   onFileSelected(event: Event) {
     if (event) {
       const element = event.target as HTMLInputElement;
 
-      if(!this.allowMultipleSelection) {
+      if(!this.allowMultipleSelection()) {
         if(element.files) {
           this.selectedFile.emit(element.files[0]);
         }       
