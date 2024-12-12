@@ -1,6 +1,6 @@
 # OpenFileButtonDemo
 
-\- Angular 18 application + Angular Material.
+\- Angular 19 application + Angular Material.
 
 \- Demo application with 2 open file buttons.
 
