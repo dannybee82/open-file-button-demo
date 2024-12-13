@@ -7,7 +7,6 @@ import { MatTooltipModule } from '@angular/material/tooltip';
 
 @Component({
   selector: 'app-file-preview',
-  standalone: true,
   imports: [
     OpenFileComponent,
     MatIconModule,

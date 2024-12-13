@@ -7,7 +7,6 @@ import { MatTooltipModule } from '@angular/material/tooltip';
   selector: 'app-open-file',
   templateUrl: './open-file.component.html',
   styleUrls: ['./open-file.component.scss'],
-  standalone: true,
   imports: [
     MatButtonModule,
     MatIconModule,
