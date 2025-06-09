@@ -18,11 +18,11 @@ import { MatTooltipModule } from '@angular/material/tooltip';
 })
 export class FilePreviewComponent {
 
-  imagePreview: WritableSignal<string> = signal('');
-  errorLoadingImage: WritableSignal<string> = signal('');
+  protected imagePreview: WritableSignal<string> = signal('');
+  protected errorLoadingImage: WritableSignal<string> = signal('');
 
-  isPdfValid: WritableSignal<boolean> = signal(false);
-  errorLoadingPdf: WritableSignal<string> = signal('');
+  protected isPdfValid: WritableSignal<boolean> = signal(false);
+  protected errorLoadingPdf: WritableSignal<string> = signal('');
 
   private loadFilesInBrowser = inject(LoadFilesInBrowserService);
 
@@ -34,11 +34,10 @@ export class FilePreviewComponent {
       if(result) {
         if(this.loadFilesInBrowser.isAllowedFile($event, result) && this.loadFilesInBrowser.checkMaximumSize($event.size)) {
           imagePreview = result;
-          errorMessage = '';
         } else {
           imagePreview = '';
           errorMessage = !this.loadFilesInBrowser.checkMaximumSize($event.size) ? 'Image exceeds 10MB.' : 'Image is invalid.'; 
-        }           
+        }
       }
 
       this.errorLoadingImage.set(errorMessage);
