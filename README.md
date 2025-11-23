@@ -1,6 +1,6 @@
 # OpenFileButtonDemo
 
-\- Angular 20 application (with [Angular CLI](https://github.com/angular/angular-cli) version 20.0.1) + Angular Material.
+\- Angular 21 application (with [Angular CLI](https://github.com/angular/angular-cli) version 21.0.0) + Angular Material.
 
 \- Demo application with 2 open file buttons.
 
@@ -11,6 +11,8 @@
 \- See the root of this project for example images.
 
 ## Installation + run app
+
+**Angular 21** needs a **Node.js** version of at least _20.19.0_
 
 **Command to install**
 
