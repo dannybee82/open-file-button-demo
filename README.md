@@ -30,6 +30,17 @@ _ng s --o_
 
 ### **Changelog:**
 
+_November 2025_
+
+\- Upgrade to _Angular 21_ and upgraded other packages.
+
+*   Removed deprecated _Karma_ and installed _Vitest._
+*   Migrated _Jasmine_ tests to _Vitest_ tests for future use (command: **ng generate refactor-jasmine-vitest**).
+
+\- Migration to _Zoneless_ (Without _Zone.js_ - removed package _zone.js_)
+
+\- Some other small changes.
+
 _June 2025_
 
 \- Upgrade to Angular 20. 
