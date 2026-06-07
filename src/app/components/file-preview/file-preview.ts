@@ -1,6 +1,6 @@
 import { Component, WritableSignal, inject, signal } from '@angular/core';
-import { OpenFileComponent } from '../open-file/open-file.component';
-import { LoadFilesInBrowserService } from '../../services/load-files-in-browser.service';
+import { OpenFile } from '../open-file/open-file';
+import { LoadFilesInBrowser } from '../../services/load-files-in-browser';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { MatTooltipModule } from '@angular/material/tooltip';
@@ -8,15 +8,15 @@ import { MatTooltipModule } from '@angular/material/tooltip';
 @Component({
   selector: 'app-file-preview',
   imports: [
-    OpenFileComponent,
+    OpenFile,
     MatIconModule,
     MatButtonModule,
     MatTooltipModule
   ],
-  templateUrl: './file-preview.component.html',
-  styleUrl: './file-preview.component.scss'
+  templateUrl: './file-preview.html',
+  styleUrl: './file-preview.scss'
 })
-export class FilePreviewComponent {
+export class FilePreview {
 
   protected imagePreview: WritableSignal<string> = signal('');
   protected errorLoadingImage: WritableSignal<string> = signal('');
@@ -24,7 +24,7 @@ export class FilePreviewComponent {
   protected isPdfValid: WritableSignal<boolean> = signal(false);
   protected errorLoadingPdf: WritableSignal<string> = signal('');
 
-  private loadFilesInBrowser = inject(LoadFilesInBrowserService);
+  private loadFilesInBrowser = inject(LoadFilesInBrowser);
 
   loadImage($event: File): void {
     this.loadFilesInBrowser.readFile($event).subscribe((result: string | null) => {
@@ -33,6 +33,7 @@ export class FilePreviewComponent {
 
       if(result) {
         if(this.loadFilesInBrowser.isAllowedFile($event, result) && this.loadFilesInBrowser.checkMaximumSize($event.size)) {
+          console.log(result);
           imagePreview = result;
         } else {
           imagePreview = '';

@@ -1,10 +1,8 @@
-import { Injectable } from '@angular/core';
+import { Service } from '@angular/core';
 import { Observable, from } from "rxjs";
 
-@Injectable({
-  providedIn: 'root'
-})
-export class LoadFilesInBrowserService {
+@Service()
+export class LoadFilesInBrowser {
 
   private _allowedExtensions: string[] = ['jpg', 'jpeg', 'png', 'gif', 'pdf'];  
   private _allowedTypes: string[] = ['image/jpg', 'image/jpeg', 'image/png', 'image/gif', 'application/pdf'];

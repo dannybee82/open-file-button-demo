@@ -1,13 +1,13 @@
 import { TestBed } from '@angular/core/testing';
-
-import { LoadFilesInBrowserService } from './load-files-in-browser.service';
+import { LoadFilesInBrowser } from './load-files-in-browser';
+import { describe, beforeEach, it, expect } from 'vitest';
 
 describe('LoadFilesInBrowserService', () => {
-  let service: LoadFilesInBrowserService;
+  let service: LoadFilesInBrowser;
 
   beforeEach(() => {
     TestBed.configureTestingModule({});
-    service = TestBed.inject(LoadFilesInBrowserService);
+    service = TestBed.inject(LoadFilesInBrowser);
   });
 
   it('should be created', () => {

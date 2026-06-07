@@ -5,15 +5,15 @@ import { MatTooltipModule } from '@angular/material/tooltip';
 
 @Component({
   selector: 'app-open-file',
-  templateUrl: './open-file.component.html',
-  styleUrls: ['./open-file.component.scss'],
+  templateUrl: './open-file.html',
+  styleUrls: ['./open-file.scss'],
   imports: [
     MatButtonModule,
     MatIconModule,
     MatTooltipModule
   ]
 })
-export class OpenFileComponent {
+export class OpenFile {
 
   readonly buttonText: InputSignal<string> = input<string>('');
   readonly fileExtensions: InputSignal<string> = input<string>('*');

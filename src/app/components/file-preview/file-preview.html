@@ -8,9 +8,9 @@
         </app-open-file>
     </div>
     <div class="row mb-1 image-container">
-        @if(this.imagePreview() !== '') {
+        @if(imagePreview() !== '') {
             <div>
-                <img class="preview-image" [src]="this.imagePreview()" alt="Preview" title="Preview">
+                <img class="preview-image" [src]="imagePreview()" alt="Preview" title="Preview">
             </div>
             <div class="horizontal-divider"></div>
             <div>
@@ -21,10 +21,10 @@
             </div>
         }      
         
-        @if(this.errorLoadingImage() !== '') {
+        @if(errorLoadingImage() !== '') {
             <div class="error">
                 <mat-icon>error</mat-icon>
-                <div class="ms-2">{{ this.errorLoadingImage() }}</div>                
+                <div class="ms-2">{{ errorLoadingImage() }}</div>                
             </div>
         }
     </div>
@@ -39,7 +39,7 @@
     </div>
 
     <div class="row mb-1 pdf-container">
-        @if(this.isPdfValid()) {
+        @if(isPdfValid()) {
             <div class="success">
                 <mat-icon>check</mat-icon>
                 <div class="ms-2">PDF valid</div>
@@ -53,10 +53,10 @@
             </div>
         }             
             
-        @if(this.errorLoadingPdf() !== '') {
+        @if(errorLoadingPdf() !== '') {
             <div class="error">
                 <mat-icon>error</mat-icon>
-                <div class="ms-2">{{ this.errorLoadingPdf() }}</div>
+                <div class="ms-2">{{ errorLoadingPdf() }}</div>
             </div>
         }        
     </div>

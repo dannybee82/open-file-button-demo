@@ -1,6 +1,6 @@
 # OpenFileButtonDemo
 
-\- Angular 21 application (with [Angular CLI](https://github.com/angular/angular-cli) version 21.0.0) + Angular Material.
+\- Angular 22 application (with [Angular CLI](https://github.com/angular/angular-cli) version 22.0.0) + Angular Material.
 
 \- Demo application with 2 open file buttons.
 
@@ -12,7 +12,7 @@
 
 ## Installation + run app
 
-**Angular 21** needs a **Node.js** version of at least _20.19.0_
+**Angular 22** needs a **Node.js** version of at least _22.22.3_
 
 **Command to install**
 
@@ -31,6 +31,18 @@ or shorter:
 _ng s --o_
 
 ### **Changelog:**
+
+_June 2026_
+
+\- Upgrade to _Angular 22_ and upgraded other packages.
+
+\- Migrated _@Injectable_ to _@Service_.
+
+\- Using the default: _ChangeDetectionStrategy.OnPush_ in stead of _ChangeDetectionStrategy.Eager_.
+
+\- Using the latest file naming conventions - and deleting the old schematics from _angular.json_
+
+\- Various small changes in the templates.
 
 _November 2025_
 

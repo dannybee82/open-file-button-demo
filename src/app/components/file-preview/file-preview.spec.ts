@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { FilePreview } from './file-preview';
+import { describe, beforeEach, it, expect } from 'vitest';
 
-import { OpenFileComponent } from './open-file.component';
-
-describe('OpenFileComponent', () => {
-  let component: OpenFileComponent;
-  let fixture: ComponentFixture<OpenFileComponent>;
+describe('FilePreviewComponent', () => {
+  let component: FilePreview;
+  let fixture: ComponentFixture<FilePreview>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ OpenFileComponent ]
+      imports: [FilePreview]
     })
     .compileComponents();
-
-    fixture = TestBed.createComponent(OpenFileComponent);
+    
+    fixture = TestBed.createComponent(FilePreview);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
